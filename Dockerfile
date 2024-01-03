@@ -10,16 +10,6 @@ COPY .yarnrc.yml ./
 COPY .yarn .yarn
 COPY plugins-bundled plugins-bundled
 
-RUN npm config set registry https://registry.npm.taobao.org
-
-RUN npm config set disturl https://npm.taobao.org/dist
-
-RUN npm config rm proxy
-
-RUN npm config rm https-proxy
-
-RUN npm config set sass-binary-site http://npm.taobao.org/mirrors/node-sass
-
 RUN yarn cache clean
 
 RUN yarn install
